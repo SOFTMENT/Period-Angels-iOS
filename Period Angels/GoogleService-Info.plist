@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>931036689494-7oarkjsqonh5r4tsea4221c21bm72f2s.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.931036689494-7oarkjsqonh5r4tsea4221c21bm72f2s</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>931036689494-5uasfvqneuuddlcguqopcmqcgaabt2fv.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDPGp7pSJ3Y3tQ_obemPNKsKLcaCOKv5bE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>931036689494</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>in.softment.Period-Angels</string>
+	<key>PROJECT_ID</key>
+	<string>period-angels</string>
+	<key>STORAGE_BUCKET</key>
+	<string>period-angels.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:931036689494:ios:6d15706aa07d68306fb7f7</string>
+</dict>
+</plist>

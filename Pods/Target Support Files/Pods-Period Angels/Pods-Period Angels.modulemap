@@ -1,0 +1,6 @@
+framework module Pods_Period_Angels {
+  umbrella header "Pods-Period Angels-umbrella.h"
+
+  export *
+  module * { export * }
+}
