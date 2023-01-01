@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		25F387E6CF5967DFB6D64B74 /* Pods_Period_Angels.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A56F57CAD637CA31BF8D587 /* Pods_Period_Angels.framework */; };
+		5D072B56296117F600A431C7 /* FAQSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D072B55296117F600A431C7 /* FAQSViewController.swift */; };
+		5D072B582962147E00A431C7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D072B572962147E00A431C7 /* ProfileViewController.swift */; };
+		5D072B5A29621C4600A431C7 /* Notification_View_Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D072B5929621C4600A431C7 /* Notification_View_Cell.swift */; };
+		5D072B5C29621C7300A431C7 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D072B5B29621C7300A431C7 /* NotificationViewController.swift */; };
+		5D072B5E29621FF900A431C7 /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D072B5D29621FF900A431C7 /* ContactUsViewController.swift */; };
+		5D072B60296227E000A431C7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D072B5F296227E000A431C7 /* HomeViewController.swift */; };
 		5D4E67492944BDB400008EED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4E67482944BDB400008EED /* AppDelegate.swift */; };
 		5D4E674B2944BDB400008EED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4E674A2944BDB400008EED /* SceneDelegate.swift */; };
 		5D4E674D2944BDB400008EED /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4E674C2944BDB400008EED /* WelcomeViewController.swift */; };
@@ -45,10 +51,17 @@
 		5DDFA1132959AFFE000BC8CA /* GooglePlacesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDFA1122959AFFE000BC8CA /* GooglePlacesManager.swift */; };
 		5DDFA1152959B66D000BC8CA /* MyGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDFA1142959B66D000BC8CA /* MyGesture.swift */; };
 		5DDFA117295B9DCC000BC8CA /* ManageAvailablityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDFA116295B9DCC000BC8CA /* ManageAvailablityViewController.swift */; };
+		5DDFA119295FD120000BC8CA /* ManageProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDFA118295FD120000BC8CA /* ManageProductsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1A56F57CAD637CA31BF8D587 /* Pods_Period_Angels.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Period_Angels.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D072B55296117F600A431C7 /* FAQSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQSViewController.swift; sourceTree = "<group>"; };
+		5D072B572962147E00A431C7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		5D072B5929621C4600A431C7 /* Notification_View_Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification_View_Cell.swift; sourceTree = "<group>"; };
+		5D072B5B29621C7300A431C7 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		5D072B5D29621FF900A431C7 /* ContactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
+		5D072B5F296227E000A431C7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5D4E67452944BDB400008EED /* Period Angels.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Period Angels.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D4E67482944BDB400008EED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D4E674A2944BDB400008EED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +102,7 @@
 		5DDFA1122959AFFE000BC8CA /* GooglePlacesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesManager.swift; sourceTree = "<group>"; };
 		5DDFA1142959B66D000BC8CA /* MyGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGesture.swift; sourceTree = "<group>"; };
 		5DDFA116295B9DCC000BC8CA /* ManageAvailablityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageAvailablityViewController.swift; sourceTree = "<group>"; };
+		5DDFA118295FD120000BC8CA /* ManageProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageProductsViewController.swift; sourceTree = "<group>"; };
 		75BDF69A5BBCD418C30C0B4F /* Pods-Period Angels.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Period Angels.release.xcconfig"; path = "Target Support Files/Pods-Period Angels/Pods-Period Angels.release.xcconfig"; sourceTree = "<group>"; };
 		EB56DCD7B41B9EA3FE899FD0 /* Pods-Period Angels.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Period Angels.debug.xcconfig"; path = "Target Support Files/Pods-Period Angels/Pods-Period Angels.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -143,8 +157,8 @@
 		5D4E67472944BDB400008EED /* Period Angels */ = {
 			isa = PBXGroup;
 			children = (
-				5D4E6762294595B400008EED /* Util */,
 				5D4E6763294595BE00008EED /* Font */,
+				5D4E6762294595B400008EED /* Util */,
 				5D4E6761294595AF00008EED /* Model */,
 				5D4E6760294595AA00008EED /* View */,
 				5D4E675F2945959D00008EED /* ViewController */,
@@ -170,6 +184,12 @@
 				5DDFA10C29588C11000BC8CA /* OrganiserHomeViewController.swift */,
 				5DDFA10E29588C32000BC8CA /* VolunteerHomeController.swift */,
 				5DDFA116295B9DCC000BC8CA /* ManageAvailablityViewController.swift */,
+				5DDFA118295FD120000BC8CA /* ManageProductsViewController.swift */,
+				5D072B55296117F600A431C7 /* FAQSViewController.swift */,
+				5D072B572962147E00A431C7 /* ProfileViewController.swift */,
+				5D072B5B29621C7300A431C7 /* NotificationViewController.swift */,
+				5D072B5D29621FF900A431C7 /* ContactUsViewController.swift */,
+				5D072B5F296227E000A431C7 /* HomeViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -181,6 +201,7 @@
 				5D4E674E2944BDB400008EED /* Main.storyboard */,
 				5D4E67512944BDB600008EED /* Assets.xcassets */,
 				5DDFA1102959AF0D000BC8CA /* Google_Places_Cell.swift */,
+				5D072B5929621C4600A431C7 /* Notification_View_Cell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -373,26 +394,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DDFA10329585F65000BC8CA /* SignUpViewController.swift in Sources */,
+				5D072B5A29621C4600A431C7 /* Notification_View_Cell.swift in Sources */,
 				5DDFA1072958614D000BC8CA /* SetupOrganisationViewController.swift in Sources */,
 				5DDFA0FB29577D49000BC8CA /* NotificationModel.swift in Sources */,
 				5DDFA109295861AD000BC8CA /* SetupVolunteerViewController.swift in Sources */,
 				5D4E674D2944BDB400008EED /* WelcomeViewController.swift in Sources */,
 				5DDFA0FD29577DC8000BC8CA /* OrganiserModel.swift in Sources */,
+				5D072B582962147E00A431C7 /* ProfileViewController.swift in Sources */,
 				5DDFA1112959AF0D000BC8CA /* Google_Places_Cell.swift in Sources */,
 				5DDFA1152959B66D000BC8CA /* MyGesture.swift in Sources */,
 				5DDFA10529585F80000BC8CA /* UserSelectionActivity.swift in Sources */,
+				5DDFA119295FD120000BC8CA /* ManageProductsViewController.swift in Sources */,
 				5D4E67492944BDB400008EED /* AppDelegate.swift in Sources */,
 				5DDFA0F729574FB1000BC8CA /* MyExtensions.swift in Sources */,
 				5DDFA10F29588C32000BC8CA /* VolunteerHomeController.swift in Sources */,
+				5D072B56296117F600A431C7 /* FAQSViewController.swift in Sources */,
 				5DDFA1132959AFFE000BC8CA /* GooglePlacesManager.swift in Sources */,
 				5DDFA117295B9DCC000BC8CA /* ManageAvailablityViewController.swift in Sources */,
 				5DDFA0FF29577FAE000BC8CA /* VolunteerModel.swift in Sources */,
+				5D072B60296227E000A431C7 /* HomeViewController.swift in Sources */,
 				5DDFA10D29588C11000BC8CA /* OrganiserHomeViewController.swift in Sources */,
 				5D4E674B2944BDB400008EED /* SceneDelegate.swift in Sources */,
 				5DDFA0F929577CB3000BC8CA /* UserModel.swift in Sources */,
+				5D072B5C29621C7300A431C7 /* NotificationViewController.swift in Sources */,
 				5DDFA10129585F45000BC8CA /* SignInViewController.swift in Sources */,
 				5DDFA10B295885FC000BC8CA /* TabBarViewController.swift in Sources */,
 				5DDFA0F529574F9B000BC8CA /* Constants.swift in Sources */,
+				5D072B5E29621FF900A431C7 /* ContactUsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

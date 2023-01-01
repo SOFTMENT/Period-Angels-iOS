@@ -42,14 +42,23 @@ class SetupVolunteerViewController : UIViewController {
     override func viewDidLoad() {
         
         volunteerNameTF.delegate = self
+        volunteerNameTF.changePlaceholderColour()
         volunteerAddressTF.delegate = self
+        volunteerNameTF.changePlaceholderColour()
         buildingNoTF.delegate = self
+        buildingNoTF.changePlaceholderColour()
         streetAddressTF.delegate = self
+        streetAddressTF.changePlaceholderColour()
         cityTF.delegate = self
+        cityTF.changePlaceholderColour()
         postalCodeTF.delegate = self
+        postalCodeTF.changePlaceholderColour()
         stateTF.delegate = self
+        stateTF.changePlaceholderColour()
         countryTF.delegate = self
+        countryTF.changePlaceholderColour()
         phoneNumberTF.delegate = self
+        phoneNumberTF.changePlaceholderColour()
         createAccountBtn.layer.cornerRadius = 8
         
         
@@ -165,7 +174,10 @@ class SetupVolunteerViewController : UIViewController {
                                 longitudeDelta: 0.02)),
                             animated: true)
         mapView.isScrollEnabled = false
-        
+        DispatchQueue.main.async {
+            self.tableView.isHidden = true
+        }
+       
     }
     
     @objc func hideKeyboard(){
@@ -206,10 +218,9 @@ class SetupVolunteerViewController : UIViewController {
     }
     
         @objc func locationCellClicked(myGesture : MyGesture){
-            tableView.isHidden = true
+           
             view.endEditing(true)
-            
-            
+         
             let place = places[myGesture.index]
             volunteerAddressTF.text = place.name ?? ""
             

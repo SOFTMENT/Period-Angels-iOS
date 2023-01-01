@@ -24,7 +24,11 @@ class SignUpViewController : UIViewController {
     override func viewDidLoad() {
         
         emailTF.delegate = self
+        emailTF.changePlaceholderColour()
         passwordTF.delegate = self
+        passwordTF.changePlaceholderColour()
+        nameTF.delegate = self
+        nameTF.changePlaceholderColour()
         
         registerBtn.layer.cornerRadius = 8
         

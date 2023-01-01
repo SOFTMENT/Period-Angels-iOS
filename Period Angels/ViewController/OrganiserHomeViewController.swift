@@ -90,12 +90,12 @@ class OrganiserHomeViewController : UIViewController {
         }))
         
         alert.addAction(UIAlertAction(title: "Go to User", style: .default,handler: { action in
-            UserDefaults.setValue("user", forKey: "userType")
+            UserDefaults().set("user", forKey: "userType")
             self.getUserData(uid: Auth.auth().currentUser!.uid, showProgress: true)
         }))
         
         alert.addAction(UIAlertAction(title: "Go to Volunteer", style: .default,handler: { action in
-            UserDefaults.setValue("volunteer", forKey: "userType")
+            UserDefaults().set("volunteer", forKey: "userType")
             if let isVolunteer = UserModel.data!.volunteer, isVolunteer {
                 self.getVolunteerData(uid: Auth.auth().currentUser!.uid, showProgress: true)
             }
@@ -108,7 +108,7 @@ class OrganiserHomeViewController : UIViewController {
             let alert = UIAlertController(title: "Logout", message: "Are you sure you want to logout", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Logout", style: .default,handler: { action in
                 
-                UserDefaults.setValue("", forKey: "userType")
+                UserDefaults().set("", forKey: "userType")
                 self.logout()
             }))
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))

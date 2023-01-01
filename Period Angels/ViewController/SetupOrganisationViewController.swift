@@ -44,16 +44,26 @@ class SetupOrganisationViewController : UIViewController {
           
         
         organisationNameTF.delegate = self
+        organisationNameTF.changePlaceholderColour()
         organisationAddressTF.delegate = self
+        organisationAddressTF.changePlaceholderColour()
         mapView.layer.cornerRadius = 8
         buildingNoTF.delegate = self
+        buildingNoTF.changePlaceholderColour()
         streetAddressTF.delegate = self
+        streetAddressTF.changePlaceholderColour()
         cityTF.delegate = self
+        cityTF.changePlaceholderColour()
         postalCodeTF.delegate = self
+        postalCodeTF.changePlaceholderColour()
         phoneNumberTF.delegate = self
+        phoneNumberTF.changePlaceholderColour()
         createAccountBtn.layer.cornerRadius = 8
+    
         stateTF.delegate = self
+        stateTF.changePlaceholderColour()
         countryTF.delegate = self
+        countryTF.changePlaceholderColour()
         
         backView.dropShadow()
         backView.isUserInteractionEnabled = true
@@ -61,7 +71,7 @@ class SetupOrganisationViewController : UIViewController {
         backView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(backBtnClicked)))
         
         organisationAddressTF.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
-        
+        organisationAddressTF.changePlaceholderColour()
         
         view.isUserInteractionEnabled = true
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))

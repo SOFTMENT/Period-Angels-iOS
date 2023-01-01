@@ -22,7 +22,9 @@ class SignInViewController : UIViewController {
     override func viewDidLoad() {
         
         emailTF.delegate = self
+        emailTF.changePlaceholderColour()
         passwordTF.delegate = self
+        passwordTF.changePlaceholderColour()
         
         continueBtn.layer.cornerRadius = 8
         

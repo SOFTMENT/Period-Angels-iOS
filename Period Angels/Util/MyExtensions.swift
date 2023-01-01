@@ -65,7 +65,7 @@ extension UITextField {
     
     func changePlaceholderColour()  {
         attributedPlaceholder = NSAttributedString(string: placeholder ?? "",
-                                                   attributes: [NSAttributedString.Key.foregroundColor: UIColor(red: 225/255, green: 225/255, blue: 225/255, alpha: 1)])
+                                                   attributes: [NSAttributedString.Key.foregroundColor: UIColor(red: 185/255, green: 185/255, blue: 185/255, alpha: 1)])
     }
     
    
@@ -444,11 +444,7 @@ func beRootScreen(mIdentifier : String) {
     
     window.rootViewController = getViewControllerUsingIdentifier(mIdentifier: mIdentifier)
     window.makeKeyAndVisible()
-    UIView.transition(with: window,
-                      duration: 1.6,
-                      options: .transitionCrossDissolve,
-                      animations: nil,
-                      completion: nil)
+ 
     
 }
     
