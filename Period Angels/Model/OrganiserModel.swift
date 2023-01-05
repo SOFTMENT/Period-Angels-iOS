@@ -44,6 +44,8 @@ class OrganiserModel : NSObject, Codable {
     
     private static var organiserData : OrganiserModel?
     
+    static var organisationModel : [OrganiserModel] = []
+    
    
     static var data : OrganiserModel? {
         set(organiserData) {
@@ -57,6 +59,9 @@ class OrganiserModel : NSObject, Codable {
     override init() {
         
     }
+    
+    
+    
     
     
 }

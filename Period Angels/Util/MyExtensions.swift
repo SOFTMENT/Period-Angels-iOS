@@ -19,8 +19,10 @@ import AVFoundation
 extension UIView {
     
     func addBorder() {
-        layer.borderWidth = 0.8
-        layer.borderColor = UIColor(red: 135/255, green: 10/255, blue: 10/255, alpha: 1).cgColor
+    
+        layer.cornerRadius = 8
+        layer.borderWidth = 1.3
+        layer.borderColor = UIColor(red: 20/255, green: 20/255, blue: 20/255, alpha: 1).cgColor
     }
     
 }
@@ -65,7 +67,7 @@ extension UITextField {
     
     func changePlaceholderColour()  {
         attributedPlaceholder = NSAttributedString(string: placeholder ?? "",
-                                                   attributes: [NSAttributedString.Key.foregroundColor: UIColor(red: 185/255, green: 185/255, blue: 185/255, alpha: 1)])
+                                                   attributes: [NSAttributedString.Key.foregroundColor: UIColor(red: 90/255, green: 90/255, blue: 90/255, alpha: 1)])
     }
     
    
@@ -434,6 +436,7 @@ func getViewControllerUsingIdentifier(mIdentifier : String) -> UIViewController{
     }
 }
 
+    
 func beRootScreen(mIdentifier : String) {
     
     guard let window = self.view.window else {
@@ -747,7 +750,7 @@ extension UIView {
         layer.masksToBounds = false
         layer.shadowRadius = 2
         layer.shadowOpacity = 0.3
-        layer.shadowColor = UIColor.gray.cgColor
+        layer.shadowColor = UIColor.black.cgColor
         layer.shadowOffset = CGSize(width: 0 , height: 1.8)
         layer.shadowPath = UIBezierPath(rect: CGRect(x: 0,
                                                      y: bounds.maxY - layer.shadowRadius,
@@ -849,3 +852,20 @@ public extension UIApplication {
     }
 }
 
+extension UIAlertController {
+    static func actionSheetWithItems<A : Equatable>(items : [(title : String, value : A)], currentSelection : A? = nil, action : @escaping (A) -> Void) -> UIAlertController {
+        let controller = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        for (var title, value) in items {
+            if let selection = currentSelection, value == selection {
+                // Note that checkmark and space have a neutral text flow direction so this is correct for RTL
+                title = "✔︎ " + title
+            }
+            controller.addAction(
+                UIAlertAction(title: title, style: .default) {_ in
+                    action(value)
+                }
+            )
+        }
+        return controller
+    }
+}

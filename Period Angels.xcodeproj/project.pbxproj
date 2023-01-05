@@ -33,6 +33,9 @@
 		5D4E67792945967400008EED /* sfprobold2.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5D4E676D2945967200008EED /* sfprobold2.otf */; };
 		5D4E677A2945967400008EED /* sfproheavy2.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5D4E676E2945967300008EED /* sfproheavy2.otf */; };
 		5D4E677B2945967400008EED /* sfproheavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5D4E676F2945967400008EED /* sfproheavy.otf */; };
+		5D99F895296362C20085A298 /* Organisation_View_Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D99F894296362C20085A298 /* Organisation_View_Cell.swift */; };
+		5D99F8972963795A0085A298 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D99F8962963795A0085A298 /* MapViewController.swift */; };
+		5D99F899296396950085A298 /* ShowOrganisersDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D99F898296396950085A298 /* ShowOrganisersDetailsViewController.swift */; };
 		5DDFA0F529574F9B000BC8CA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDFA0F429574F9B000BC8CA /* Constants.swift */; };
 		5DDFA0F729574FB1000BC8CA /* MyExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDFA0F629574FB1000BC8CA /* MyExtensions.swift */; };
 		5DDFA0F929577CB3000BC8CA /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDFA0F829577CB3000BC8CA /* UserModel.swift */; };
@@ -84,6 +87,9 @@
 		5D4E676D2945967200008EED /* sfprobold2.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sfprobold2.otf; sourceTree = "<group>"; };
 		5D4E676E2945967300008EED /* sfproheavy2.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sfproheavy2.otf; sourceTree = "<group>"; };
 		5D4E676F2945967400008EED /* sfproheavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sfproheavy.otf; sourceTree = "<group>"; };
+		5D99F894296362C20085A298 /* Organisation_View_Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Organisation_View_Cell.swift; sourceTree = "<group>"; };
+		5D99F8962963795A0085A298 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		5D99F898296396950085A298 /* ShowOrganisersDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowOrganisersDetailsViewController.swift; sourceTree = "<group>"; };
 		5DDFA0F429574F9B000BC8CA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5DDFA0F629574FB1000BC8CA /* MyExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExtensions.swift; sourceTree = "<group>"; };
 		5DDFA0F829577CB3000BC8CA /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -190,6 +196,8 @@
 				5D072B5B29621C7300A431C7 /* NotificationViewController.swift */,
 				5D072B5D29621FF900A431C7 /* ContactUsViewController.swift */,
 				5D072B5F296227E000A431C7 /* HomeViewController.swift */,
+				5D99F8962963795A0085A298 /* MapViewController.swift */,
+				5D99F898296396950085A298 /* ShowOrganisersDetailsViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -202,6 +210,7 @@
 				5D4E67512944BDB600008EED /* Assets.xcassets */,
 				5DDFA1102959AF0D000BC8CA /* Google_Places_Cell.swift */,
 				5D072B5929621C4600A431C7 /* Notification_View_Cell.swift */,
+				5D99F894296362C20085A298 /* Organisation_View_Cell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -400,17 +409,20 @@
 				5DDFA109295861AD000BC8CA /* SetupVolunteerViewController.swift in Sources */,
 				5D4E674D2944BDB400008EED /* WelcomeViewController.swift in Sources */,
 				5DDFA0FD29577DC8000BC8CA /* OrganiserModel.swift in Sources */,
+				5D99F895296362C20085A298 /* Organisation_View_Cell.swift in Sources */,
 				5D072B582962147E00A431C7 /* ProfileViewController.swift in Sources */,
 				5DDFA1112959AF0D000BC8CA /* Google_Places_Cell.swift in Sources */,
 				5DDFA1152959B66D000BC8CA /* MyGesture.swift in Sources */,
 				5DDFA10529585F80000BC8CA /* UserSelectionActivity.swift in Sources */,
 				5DDFA119295FD120000BC8CA /* ManageProductsViewController.swift in Sources */,
+				5D99F8972963795A0085A298 /* MapViewController.swift in Sources */,
 				5D4E67492944BDB400008EED /* AppDelegate.swift in Sources */,
 				5DDFA0F729574FB1000BC8CA /* MyExtensions.swift in Sources */,
 				5DDFA10F29588C32000BC8CA /* VolunteerHomeController.swift in Sources */,
 				5D072B56296117F600A431C7 /* FAQSViewController.swift in Sources */,
 				5DDFA1132959AFFE000BC8CA /* GooglePlacesManager.swift in Sources */,
 				5DDFA117295B9DCC000BC8CA /* ManageAvailablityViewController.swift in Sources */,
+				5D99F899296396950085A298 /* ShowOrganisersDetailsViewController.swift in Sources */,
 				5DDFA0FF29577FAE000BC8CA /* VolunteerModel.swift in Sources */,
 				5D072B60296227E000A431C7 /* HomeViewController.swift in Sources */,
 				5DDFA10D29588C11000BC8CA /* OrganiserHomeViewController.swift in Sources */,
@@ -568,27 +580,31 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Period Angels/Period Angels.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 38M3HJHB9M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Period Angels/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Period Angels";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Period Angels need your location access to fetch nearest organisations";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 5;
 				PRODUCT_BUNDLE_IDENTIFIER = "in.softment.Period-Angels";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -600,27 +616,31 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Period Angels/Period Angels.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 38M3HJHB9M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Period Angels/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Period Angels";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Period Angels need your location access to fetch nearest organisations";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 5;
 				PRODUCT_BUNDLE_IDENTIFIER = "in.softment.Period-Angels";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

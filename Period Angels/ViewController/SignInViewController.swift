@@ -25,6 +25,14 @@ class SignInViewController : UIViewController {
         emailTF.changePlaceholderColour()
         passwordTF.delegate = self
         passwordTF.changePlaceholderColour()
+        emailTF.setLeftPaddingPoints(10)
+        emailTF.setRightPaddingPoints(10)
+        
+        passwordTF.setLeftPaddingPoints(10)
+        passwordTF.setRightPaddingPoints(10)
+        
+        emailTF.addBorder()
+        passwordTF.addBorder()
         
         continueBtn.layer.cornerRadius = 8
         

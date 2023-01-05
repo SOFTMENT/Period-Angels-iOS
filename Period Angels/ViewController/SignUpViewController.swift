@@ -25,10 +25,20 @@ class SignUpViewController : UIViewController {
         
         emailTF.delegate = self
         emailTF.changePlaceholderColour()
+        emailTF.addBorder()
+        emailTF.setLeftPaddingPoints(10)
+        emailTF.setRightPaddingPoints(10)
         passwordTF.delegate = self
         passwordTF.changePlaceholderColour()
+        passwordTF.addBorder()
+        passwordTF.setRightPaddingPoints(10)
+        passwordTF.setLeftPaddingPoints(10)
         nameTF.delegate = self
         nameTF.changePlaceholderColour()
+        nameTF.setLeftPaddingPoints(10)
+        nameTF.setRightPaddingPoints(10)
+        nameTF.addBorder()
+        
         
         registerBtn.layer.cornerRadius = 8
         

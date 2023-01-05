@@ -43,22 +43,59 @@ class SetupVolunteerViewController : UIViewController {
         
         volunteerNameTF.delegate = self
         volunteerNameTF.changePlaceholderColour()
+        volunteerNameTF.addBorder()
+        volunteerNameTF.setLeftPaddingPoints(10)
+        volunteerNameTF.setRightPaddingPoints(10)
+        
         volunteerAddressTF.delegate = self
-        volunteerNameTF.changePlaceholderColour()
+        volunteerAddressTF.changePlaceholderColour()
+        volunteerAddressTF.addBorder()
+        volunteerAddressTF.setLeftPaddingPoints(10)
+        volunteerAddressTF.setRightPaddingPoints(10)
+        
         buildingNoTF.delegate = self
         buildingNoTF.changePlaceholderColour()
+        buildingNoTF.addBorder()
+        buildingNoTF.setLeftPaddingPoints(10)
+        buildingNoTF.setRightPaddingPoints(10)
+        
         streetAddressTF.delegate = self
         streetAddressTF.changePlaceholderColour()
+        streetAddressTF.addBorder()
+        streetAddressTF.setLeftPaddingPoints(10)
+        streetAddressTF.setRightPaddingPoints(10)
+        
         cityTF.delegate = self
         cityTF.changePlaceholderColour()
+        cityTF.addBorder()
+        cityTF.setLeftPaddingPoints(10)
+        cityTF.setRightPaddingPoints(10)
+        
         postalCodeTF.delegate = self
         postalCodeTF.changePlaceholderColour()
+        postalCodeTF.addBorder()
+        postalCodeTF.setLeftPaddingPoints(10)
+        postalCodeTF.setRightPaddingPoints(10)
+        
         stateTF.delegate = self
         stateTF.changePlaceholderColour()
+        stateTF.addBorder()
+        stateTF.setLeftPaddingPoints(10)
+        stateTF.setRightPaddingPoints(10)
+        
+        
         countryTF.delegate = self
         countryTF.changePlaceholderColour()
+        countryTF.addBorder()
+        countryTF.setLeftPaddingPoints(10)
+        countryTF.setRightPaddingPoints(10)
+        
         phoneNumberTF.delegate = self
         phoneNumberTF.changePlaceholderColour()
+        phoneNumberTF.addBorder()
+        phoneNumberTF.setLeftPaddingPoints(10)
+        phoneNumberTF.setRightPaddingPoints(10)
+        
         createAccountBtn.layer.cornerRadius = 8
         
         
