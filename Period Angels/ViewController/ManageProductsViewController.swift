@@ -24,7 +24,7 @@ class ManageProductsViewController : UIViewController {
     
     @IBOutlet weak var menstrualCupsTF: UITextField!
     
-    @IBOutlet weak var plasticFreeTF: UITextField!
+ 
     
     @IBOutlet weak var saveBtn: UIButton!
     override func viewDidLoad() {
@@ -35,10 +35,14 @@ class ManageProductsViewController : UIViewController {
         backView.dropShadow()
         
         periodPadsTF.delegate = self
+        periodPadsTF.addBorder()
         tamponsTF.delegate = self
+        tamponsTF.addBorder()
         reusableTF.delegate = self
+        reusableTF.addBorder()
         menstrualCupsTF.delegate = self
-        plasticFreeTF.delegate = self
+        menstrualCupsTF.addBorder()
+     
         
         saveBtn.layer.cornerRadius = 8
         
@@ -57,7 +61,7 @@ class ManageProductsViewController : UIViewController {
         let sTampons = tamponsTF.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         let sReusable = reusableTF.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         let sMenstrual = menstrualCupsTF.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        let sPlastic = plasticFreeTF.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+     
         
         if sPads == "" {
             self.showSnack(messages: "Enter Period Pads Quantity")
@@ -71,17 +75,15 @@ class ManageProductsViewController : UIViewController {
         else if sMenstrual == "" {
             self.showSnack(messages: "Enter Menstrual Cups Quantity")
         }
-        else if sPlastic == "" {
-            self.showSnack(messages: "Enter Platic Free Quantity")
-        }
+      
         else {
             ProgressHUDShow(text: "")
-            let volunteerModel = VolunteerModel()
-            volunteerModel.periodPads = Int(sPads!)
-            volunteerModel.tampons = Int(sTampons!)
-            volunteerModel.reusableProducts = Int(sReusable!)
-            volunteerModel.menstrualCup = Int(sMenstrual!)
-            volunteerModel.plasticFree = Int(sPlastic!)
+            let volunteerModel = VolunteerModel.data!
+            volunteerModel.periodPads =  volunteerModel.periodPads ?? 0 + Int(sPads!)!
+            volunteerModel.tampons = volunteerModel.tampons ?? 0 + Int(sTampons!)!
+            volunteerModel.reusableProducts = volunteerModel.reusableProducts ?? 0 + Int(sReusable!)!
+            volunteerModel.menstrualCup = volunteerModel.menstrualCup ?? 0 + Int(sMenstrual!)!
+          
             try? Firestore.firestore().collection("Volunteers")
                 .document(Auth.auth().currentUser!.uid).setData(from: volunteerModel, merge: true,completion: { error in
                     self.ProgressHUDHide()
@@ -89,7 +91,12 @@ class ManageProductsViewController : UIViewController {
                         self.showError(error.localizedDescription)
                     }
                     else {
-                        self.showSnack(messages: "Saved")
+                        self.periodPadsTF.text = ""
+                        self.tamponsTF.text = ""
+                        self.reusableTF.text = ""
+                        self.menstrualCupsTF.text = ""
+                     
+                        self.showSnack(messages: "Added")
                     }
                 })
         }

@@ -14,6 +14,7 @@ class SetupOrganisationViewController : UIViewController {
     
    
   
+    @IBOutlet weak var organisationEmailAddress: UITextField!
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var organisationNameTF: UITextField!
     @IBOutlet weak var organisationAddressTF: UITextField!
@@ -84,6 +85,12 @@ class SetupOrganisationViewController : UIViewController {
         phoneNumberTF.addBorder()
         phoneNumberTF.setLeftPaddingPoints(10)
         phoneNumberTF.setRightPaddingPoints(10)
+        
+        organisationEmailAddress.delegate = self
+        organisationEmailAddress.changePlaceholderColour()
+        organisationEmailAddress.addBorder()
+        organisationEmailAddress.setLeftPaddingPoints(10)
+        organisationEmailAddress.setRightPaddingPoints(10)
         
         createAccountBtn.layer.cornerRadius = 8
     
@@ -238,7 +245,7 @@ class SetupOrganisationViewController : UIViewController {
         let sCity = cityTF.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         let sPostalCode = postalCodeTF.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         let sOrganisationPhoneNumber = phoneNumberTF.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        
+        let sOrganisationEmail = organisationEmailAddress.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         let sState = stateTF.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         
         let sCountry = countryTF.text?.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -270,6 +277,9 @@ class SetupOrganisationViewController : UIViewController {
         else if sOrganisationPhoneNumber == "" {
             self.showSnack(messages: "Enter Phone Number")
         }
+        else if sOrganisationEmail == "" {
+            self.showSnack(messages: "Enter Email Address")
+        }
         else if organisationType == "" {
             self.showSnack(messages: "Select Organisation Type")
         }
@@ -286,6 +296,7 @@ class SetupOrganisationViewController : UIViewController {
             organisationModel.type = self.organisationType
             organisationModel.phoneNumber = sOrganisationPhoneNumber
             organisationModel.latitude = latitude
+            organisationModel.organisationEmailAddress = sOrganisationEmail
             organisationModel.longitude = longitude
             organisationModel.geoHash = GFUtils.geoHash(forLocation: CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
             
@@ -302,7 +313,7 @@ class SetupOrganisationViewController : UIViewController {
                     self.showSnack(messages: error.localizedDescription)
                 }
                 else {
-                    self.beRootScreen(mIdentifier: Constants.StroyBoard.organiserHomeController)
+                    self.getOrganiserData(uid: UserModel.data!.uid ?? "123", showProgress: true)
                 }
             }
         }
@@ -325,6 +336,25 @@ extension SetupOrganisationViewController : UITextFieldDelegate {
         return true
     }
     
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+       
+        if textField == phoneNumberTF {
+            var startString = ""
+
+              if textField.text != nil {
+                  startString += textField.text!
+              }
+
+              startString += string
+
+              var limitNumber = startString.count
+
+              if limitNumber > 11 {
+                  return false
+              } 
+        }
+        return true
+    }
 }
 
 

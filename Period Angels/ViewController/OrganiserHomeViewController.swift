@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 
 class OrganiserHomeViewController : UIViewController {
+    @IBOutlet weak var emailAddress: UILabel!
     
     @IBOutlet weak var organisationName: UILabel!
     @IBOutlet weak var organisationPhoneNumber: UILabel!
@@ -58,8 +59,22 @@ class OrganiserHomeViewController : UIViewController {
         
         saveBtn.layer.cornerRadius = 8
         
+        organisationPhoneNumber.isUserInteractionEnabled = true
+        organisationPhoneNumber.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(phoneNumberClicked)))
         
         loadUI(organisationModel: OrganiserModel.data!)
+        
+    
+    }
+    
+    @objc func phoneNumberClicked(){
+        if let url = URL(string: "tel://\(organisationPhoneNumber.text ?? "")"), UIApplication.shared.canOpenURL(url) {
+            if #available(iOS 10, *) {
+                UIApplication.shared.open(url)
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+        }
     }
     
     
@@ -91,6 +106,7 @@ class OrganiserHomeViewController : UIViewController {
         
         alert.addAction(UIAlertAction(title: "Go to User", style: .default,handler: { action in
             UserDefaults().set("user", forKey: "userType")
+          
             self.getUserData(uid: Auth.auth().currentUser!.uid, showProgress: true)
         }))
         
@@ -103,7 +119,10 @@ class OrganiserHomeViewController : UIViewController {
                 self.beRootScreen(mIdentifier: Constants.StroyBoard.setupVolunteerController)
             }
         }))
-        
+        alert.addAction(UIAlertAction(title: "Privacy Policy", style: .default,handler: { action in
+            guard let url = URL(string: "https://softment.in/periodangels/privacypolicy.html") else { return}
+            UIApplication.shared.open(url)
+        }))
         alert.addAction(UIAlertAction(title: "Logout", style: .default,handler: { action in
             let alert = UIAlertController(title: "Logout", message: "Are you sure you want to logout", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Logout", style: .default,handler: { action in
@@ -120,16 +139,16 @@ class OrganiserHomeViewController : UIViewController {
     
     func loadUI(organisationModel : OrganiserModel){
         
-        periodPadsCheck.isSelected = true
-        tamponsCheck.isSelected = true
-        cupCheck.isSelected = true
-        plasticCheck.isSelected = true
-        reusableCheck.isSelected = true
+        periodPadsCheck.isSelected = false
+        tamponsCheck.isSelected = false
+        cupCheck.isSelected = false
+        plasticCheck.isSelected = false
+        reusableCheck.isSelected = false
         
         organisationName.text = organisationModel.name ?? "Name"
         organisationPhoneNumber.text = organisationModel.phoneNumber ?? "Phone"
         organisationAddress.text = organisationModel.fullAddress ?? "Address"
-        
+        emailAddress.text = organisationModel.organisationEmailAddress ?? "Email"
         if organisationModel.type!.elementsEqual("public") {
             businessName.text  = "Public"
             typeImage.image = UIImage(named: "building")

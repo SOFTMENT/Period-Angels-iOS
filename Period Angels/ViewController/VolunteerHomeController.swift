@@ -22,6 +22,7 @@ class VolunteerHomeController : UIViewController {
     @IBOutlet weak var gotoOrganisationBtn: UILabel!
     @IBOutlet weak var periodAngelsPackBtn: UILabel!
     
+    @IBOutlet weak var productCount: UILabel!
     @IBOutlet weak var gotoOrganisation: UILabel!
     @IBOutlet weak var periodAngelsVolunteerPack: UILabel!
     
@@ -52,6 +53,19 @@ class VolunteerHomeController : UIViewController {
         
         gotoOrganisation.isUserInteractionEnabled = true
         gotoOrganisation.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(gotoOrganisationClicked)))
+        
+        let tampons : Int = (VolunteerModel.data!.tampons ?? 0)
+        let pads : Int = (VolunteerModel.data!.periodPads ?? 0)
+        let cups : Int = (VolunteerModel.data!.menstrualCup ?? 0)
+        let reusable : Int = (VolunteerModel.data!.reusableProducts ?? 0)
+
+        let totalProducts = tampons + pads + cups + reusable
+        
+        if totalProducts > 0 {
+            productCount.text = "You've collected \(totalProducts) products so far... Angel Power!"
+        }
+        
+        
     }
     
     @objc func volunteerPackClicked(){
@@ -59,13 +73,9 @@ class VolunteerHomeController : UIViewController {
     }
    
     @objc func gotoOrganisationClicked(){
-        UserDefaults().set("organisation", forKey: "userType")
-        if let isOrganiser = UserModel.data!.organizer, isOrganiser {
-            self.getOrganiserData(uid: Auth.auth().currentUser!.uid, showProgress: true)
-        }
-        else {
-            self.beRootScreen(mIdentifier: Constants.StroyBoard.setupOrganiserController)
-        }
+        UserDefaults().set("user", forKey: "userType")
+        Constants.selectedPage = 2
+        self.getUserData(uid: Auth.auth().currentUser!.uid, showProgress: true)
     }
     
     @objc func settingsViewClicked(){
@@ -76,6 +86,7 @@ class VolunteerHomeController : UIViewController {
         
         alert.addAction(UIAlertAction(title: "Go to User", style: .default,handler: { action in
             UserDefaults().set("user", forKey: "userType")
+    
             self.getUserData(uid: Auth.auth().currentUser!.uid, showProgress: true)
         }))
         
@@ -87,6 +98,11 @@ class VolunteerHomeController : UIViewController {
             else {
                 self.beRootScreen(mIdentifier: Constants.StroyBoard.setupOrganiserController)
             }
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Privacy Policy", style: .default,handler: { action in
+            guard let url = URL(string: "https://softment.in/periodangels/privacypolicy.html") else { return}
+            UIApplication.shared.open(url)
         }))
         
         alert.addAction(UIAlertAction(title: "Logout", style: .default,handler: { action in

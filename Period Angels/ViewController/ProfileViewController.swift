@@ -25,13 +25,8 @@ class ProfileViewController : UIViewController {
     @IBOutlet weak var logout : UILabel!
     @IBOutlet weak var deleteAccountBtn: UIView!
     
-    
-    
     override func viewDidLoad() {
-        
-        username.text = UserModel.data!.fullName ?? ""
-        emailAddress.text = UserModel.data!.email ?? ""
-        
+      
         notificationCentre.isUserInteractionEnabled = true
         notificationCentre.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(notficationCentreClicked)))
         
@@ -61,6 +56,18 @@ class ProfileViewController : UIViewController {
         deleteAccountBtn.layer.cornerRadius =  8
         deleteAccountBtn.layer.borderColor = UIColor.red.cgColor
         deleteAccountBtn.layer.borderWidth = 1
+        
+        if Auth.auth().currentUser == nil {
+            switchToOrganiser.isHidden = true
+            switchToVolunteer.isHidden = true
+            
+            deleteAccountBtn.isHidden = true
+            logout.isHidden = true
+        }
+        else {
+            username.text = UserModel.data!.fullName ?? ""
+            emailAddress.text = UserModel.data!.email ?? ""
+        }
         
     }
     
@@ -103,7 +110,7 @@ class ProfileViewController : UIViewController {
     
     @objc func shareAppClicked(){
         let someText:String = "Check Out Period Angels App"
-        let objectsToShare:URL = URL(string: "https://apps.apple.com/us/app/period-angels/id1662276811ls=1&mt=8")!
+        let objectsToShare:URL = URL(string: "https://apps.apple.com/us/app/period-angels/id1662276811")!
         let sharedObjects:[AnyObject] = [objectsToShare as AnyObject,someText as AnyObject]
         let activityViewController = UIActivityViewController(activityItems : sharedObjects, applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view
@@ -111,7 +118,7 @@ class ProfileViewController : UIViewController {
     }
     
     @objc func privacyPolicyClicked(){
-        guard let url = URL(string: "https://softment.in/privacy-policy/") else { return}
+        guard let url = URL(string: "https://softment.in/periodangels/privacypolicy.html") else { return}
         UIApplication.shared.open(url)
     
     }

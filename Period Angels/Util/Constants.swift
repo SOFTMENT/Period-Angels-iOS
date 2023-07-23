@@ -27,6 +27,7 @@ struct Constants {
     public static var latitude = 0.0
     public static var longitude = 0.0
     public static var currentDate = Date()
+    public static var selectedPage = 1
 
 
 }

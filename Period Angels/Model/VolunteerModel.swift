@@ -23,7 +23,7 @@ class VolunteerModel :  NSObject, Codable {
     var tampons : Int?
     var reusableProducts : Int?
     var menstrualCup : Int?
-    var plasticFree : Int?
+
     
     
     private static var volunteerData : VolunteerModel?

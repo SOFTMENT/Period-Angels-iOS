@@ -41,7 +41,7 @@ class OrganiserModel : NSObject, Codable {
     var saturdayEndTime : String?
     var sundayStartTime : String?
     var sundayEndTime : String?
-    
+    var organisationEmailAddress : String?
     private static var organiserData : OrganiserModel?
     
     static var organisationModel : [OrganiserModel] = []

@@ -12,6 +12,9 @@ class ContactUsViewController : UIViewController {
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var mMail: UILabel!
     @IBOutlet weak var mPhone: UILabel!
+    @IBOutlet weak var fb: UIImageView!
+    @IBOutlet weak var google: UIImageView!
+    @IBOutlet weak var twitter: UIImageView!
     
     
     override func viewDidLoad() {
@@ -25,6 +28,30 @@ class ContactUsViewController : UIViewController {
         
         mPhone.isUserInteractionEnabled = true
         mPhone.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(phoneClicked)))
+        
+        google.isUserInteractionEnabled = true
+        google.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(googleClicked)))
+        
+        fb.isUserInteractionEnabled = true
+        fb.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(facebookClicked)))
+        
+        twitter.isUserInteractionEnabled = true
+        twitter.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(twitterClicked)))
+    }
+    
+    @objc func googleClicked(){
+        guard let url = URL(string: "https://www.instagram.com/periodangelsapp") else { return}
+        UIApplication.shared.open(url)
+    }
+    
+    @objc func facebookClicked(){
+        guard let url = URL(string: "https://www.facebook.com/periodangelsapp") else { return}
+        UIApplication.shared.open(url)
+    }
+    
+    @objc func twitterClicked(){
+        guard let url = URL(string: "https://twitter.com/periodangelsapp") else { return}
+        UIApplication.shared.open(url)
     }
     
     @objc func emailClicked(){

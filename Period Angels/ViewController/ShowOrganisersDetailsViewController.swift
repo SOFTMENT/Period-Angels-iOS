@@ -78,53 +78,90 @@ class ShowOrganisersDetailsViewController : UIViewController {
         reuseView.layer.cornerRadius = 8
         reuseView.isHidden = true
         
-        if let mondayAvailable = organisationModel.mondayAvailable, mondayAvailable {
-            mondayTime.text = "\(organisationModel.mondayStartTime!) To \(organisationModel.mondayEndTime!)"
+        if let mondayAvailable = organisationModel.mondayAvailable {
+            if mondayAvailable{
+                mondayTime.text = "\(organisationModel.mondayStartTime!) To \(organisationModel.mondayEndTime!)"
+            }
+            else {
+                mondayTime.text = "Closed"
+            }
         }
         else {
-            mondayTime.text = "Closed"
+            mondayTime.text = "09:00 AM To 11:00 PM"
         }
         
-        if let tuesdayAvailable = organisationModel.tuesdayAvailable,tuesdayAvailable {
-            tuesdayTime.text = "\(organisationModel.tuesdayStartTime!) To \(organisationModel.tuesdayEndTime!)"
+        if let tuesdayAvailable = organisationModel.tuesdayAvailable{
+            if tuesdayAvailable {
+                tuesdayTime.text = "\(organisationModel.tuesdayStartTime!) To \(organisationModel.tuesdayEndTime!)"
+            }
+            else {
+                tuesdayTime.text = "Closed"
+            }
         }
         else {
-            tuesdayTime.text = "Closed"
+            tuesdayTime.text = "09:00 AM To 11:00 PM"
         }
         
-        if let wednesdayAvailable = organisationModel.wednesdayAvailable, wednesdayAvailable {
-            wednesdayTime.text = "\(organisationModel.wednesdayStartTime!) To \(organisationModel.wednesdayEndTime!)"
+        if let wednesdayAvailable = organisationModel.wednesdayAvailable{
+            if  wednesdayAvailable  {
+                wednesdayTime.text = "\(organisationModel.wednesdayStartTime!) To \(organisationModel.wednesdayEndTime!)"
+            }
+            else {
+                wednesdayTime.text = "Closed"
+            }
         }
         else {
-            wednesdayTime.text = "Closed"
+            wednesdayTime.text = "09:00 AM To 11:00 PM"
         }
         
-        if let thursdayAvailable = organisationModel.thursdayAvailable, thursdayAvailable {
-            thursdayTime.text = "\(organisationModel.thursdayStartTime!) To \(organisationModel.thursdayEndTime!)"
+        if let thursdayAvailable = organisationModel.thursdayAvailable {
+            if thursdayAvailable {
+                thursdayTime.text = "\(organisationModel.thursdayStartTime!) To \(organisationModel.thursdayEndTime!)"
+            }
+            else {
+                thursdayTime.text = "Closed"
+            }
         }
         else {
-            thursdayTime.text = "Closed"
+            thursdayTime.text = "09:00 AM To 11:00 PM"
         }
         
-        if let fridayAvailable = organisationModel.fridayAvailable, fridayAvailable {
-            fridayTime.text = "\(organisationModel.fridayStartTime!) To \(organisationModel.fridayEndTime!)"
+        if let fridayAvailable = organisationModel.fridayAvailable {
+            if fridayAvailable {
+                fridayTime.text = "\(organisationModel.fridayStartTime!) To \(organisationModel.fridayEndTime!)"
+            }
+            else {
+                fridayTime.text = "Closed"
+            }
         }
         else {
-            fridayTime.text = "Closed"
+            fridayTime.text = "09:00 AM To 11:00 PM"
         }
         
-        if let saturdayAvailable = organisationModel.saturdayAvailable, saturdayAvailable {
-            saturdayTime.text = "\(organisationModel.saturdayStartTime!) To \(organisationModel.saturdayEndTime!)"
+        if let saturdayAvailable = organisationModel.saturdayAvailable{
+            if  saturdayAvailable {
+                saturdayTime.text = "\(organisationModel.saturdayStartTime!) To \(organisationModel.saturdayEndTime!)"
+            }
+            else {
+                saturdayTime.text = "Closed"
+            }
+         
         }
         else {
-            saturdayTime.text = "Closed"
+            saturdayTime.text = "09:00 AM To 11:00 PM"
         }
         
-        if let sundayAvailable = organisationModel.sundayAvailable, sundayAvailable {
-            sundayTime.text = "\(organisationModel.sundayStartTime!) To \(organisationModel.sundayEndTime!)"
+        if let sundayAvailable = organisationModel.sundayAvailable {
+            if  sundayAvailable {
+                sundayTime.text = "\(organisationModel.sundayStartTime!) To \(organisationModel.sundayEndTime!)"
+            }
+            else {
+                sundayTime.text = "Closed"
+            }
+            
         }
         else {
-            sundayTime.text = "Closed"
+            sundayTime.text = "09:00 AM To 11:00 PM"
         }
        
         
@@ -164,6 +201,29 @@ class ShowOrganisersDetailsViewController : UIViewController {
                 if product.elementsEqual("reusable") {
                     reuseView.isHidden = false
                 }
+            }
+        }
+        phone.isUserInteractionEnabled = true
+        phone.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(phoneNumberClicked)))
+      
+        address.isUserInteractionEnabled = true
+        address.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(addressClicked)))
+
+        address.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(addressClicked)))
+        
+    }
+    
+    @objc func addressClicked(){
+        UIPasteboard.general.string = address.text ?? ""
+        self.showSnack(messages: "Address Copied")
+    }
+    
+    @objc func phoneNumberClicked(){
+        if let url = URL(string: "tel://\(phone.text ?? "")"), UIApplication.shared.canOpenURL(url) {
+            if #available(iOS 10, *) {
+                UIApplication.shared.open(url)
+            } else {
+                UIApplication.shared.openURL(url)
             }
         }
     }

@@ -44,11 +44,9 @@ class TabBarViewController : UITabBarController, UITabBarControllerDelegate {
         tabBarItems.selectedImage = selectedImage4
         
     
-        selectedIndex = 1
+        selectedIndex = Constants.selectedPage
         
-        let selectedColor   = UIColor(red: 203/255.0, green: 131/255.0, blue: 142/255.0, alpha: 1.0)
-        let unselectedColor = UIColor(red: 0/255.0, green: 0/255.0, blue: 0255.0, alpha: 1)
- 
+      
 
     }
 

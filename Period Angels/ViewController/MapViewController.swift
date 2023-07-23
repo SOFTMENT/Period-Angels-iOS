@@ -118,6 +118,7 @@ class MapViewController : UIViewController {
             return
         }
         
+        
        
         for document in documents {
             
@@ -140,9 +141,26 @@ class MapViewController : UIViewController {
                         }
                        return false
                     }
+                    
                     OrganiserModel.organisationModel.append(organiserModel)
+                    
                 }
             }
+        }
+        
+        OrganiserModel.organisationModel.sort { organiser1, organiser2 in
+            
+            let coordinate1 = CLLocation(latitude: organiser1.latitude ?? 0.0, longitude: organiser1.longitude ?? 0.0)
+            let coordinate2 = CLLocation(latitude: Constants.latitude, longitude: Constants.longitude)
+            let distanceKM1 =  (coordinate1.distance(from: coordinate2)) / 1000.0
+            
+            let coordinate3 = CLLocation(latitude: organiser2.latitude ?? 0.0, longitude: organiser2.longitude ?? 0.0)
+            let distanceKM2 =  (coordinate3.distance(from: coordinate2)) / 1000.0
+            
+            if distanceKM1 > distanceKM2 {
+                return true
+            }
+            return false
         }
         
         self.loadAnotation()

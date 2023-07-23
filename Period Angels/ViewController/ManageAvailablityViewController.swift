@@ -11,6 +11,9 @@ import Firebase
 
 class ManageAvailablityViewController : UIViewController {
     
+    
+    @IBOutlet weak var saveBtn: UIButton!
+    
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var mondayStartTime: UITextField!
     @IBOutlet weak var mondayEndTime: UITextField!
@@ -112,6 +115,7 @@ class ManageAvailablityViewController : UIViewController {
         sundayStartTime.text = OrganiserModel.data!.sundayStartTime ?? "07:00 AM"
         sundayEndTime.text = OrganiserModel.data!.sundayEndTime ?? "011:00 PM"
         
+        saveBtn.layer.cornerRadius = 8
         
         createMondayStartTimePicker()
         createMondayEndTimePicker()
@@ -270,6 +274,11 @@ class ManageAvailablityViewController : UIViewController {
         
         OrganiserModel.data!.wednesdayStartTime = wednesdayStartTime.text
         updateOnFirebase(organiserModel: OrganiserModel.data!)
+    }
+    
+    
+    @IBAction func saveBtnClicked(_ sender: Any) {
+        self.showSnack(messages: "Saved")
     }
     
     func createWednesdayEndTimePicker() {

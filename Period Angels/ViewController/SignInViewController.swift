@@ -12,6 +12,8 @@ import FirebaseAuth
 
 class SignInViewController : UIViewController {
    
+    @IBOutlet weak var skipBtn: UIButton!
+    
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
     @IBOutlet weak var reset: UILabel!
@@ -42,6 +44,29 @@ class SignInViewController : UIViewController {
         view.isUserInteractionEnabled = true
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
         
+        var date = DateComponents()
+        date.year = 2023
+        date.month = 02
+        date.day = 1
+        date.timeZone = TimeZone(abbreviation: "IST")
+        date.hour = 8
+        date.minute = 59
+        date.second = 55
+        let userCalendar = Calendar.current
+
+        let currentDate = Date()
+        if let futureDateAndTime = userCalendar.date(from: date) {
+            if futureDateAndTime > currentDate {
+                self.skipBtn.isHidden = false
+
+            }
+            else {
+                self.skipBtn.isHidden = true
+
+            }
+        }
+        
+        skipBtn.layer.cornerRadius = 8
     }
     
     @objc func registerBtnClicked(){
@@ -78,6 +103,13 @@ class SignInViewController : UIViewController {
         }
 
     }
+    
+    @IBAction func skipBtnClicked(_ sender: Any) {
+        
+        self.beRootScreen(mIdentifier: Constants.StroyBoard.tabBarViewController)
+    }
+    
+    
     @objc func forgotPasswordClicked() {
         let sEmail = emailTF.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         

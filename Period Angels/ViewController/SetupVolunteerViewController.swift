@@ -189,7 +189,7 @@ class SetupVolunteerViewController : UIViewController {
                     self.showSnack(messages: error.localizedDescription)
                 }
                 else {
-                    self.beRootScreen(mIdentifier: Constants.StroyBoard.volunteerHomeController)
+                    self.getVolunteerData(uid: UserModel.data!.uid ?? "123", showProgress: true)
                 }
             }
         }
@@ -287,7 +287,25 @@ class SetupVolunteerViewController : UIViewController {
 
 }
 extension SetupVolunteerViewController : UITextFieldDelegate {
-    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+       
+        if textField == phoneNumberTF {
+            var startString = ""
+
+              if textField.text != nil {
+                  startString += textField.text!
+              }
+
+              startString += string
+
+              var limitNumber = startString.count
+
+              if limitNumber > 11 {
+                  return false
+              }
+        }
+        return true
+    }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return true

@@ -10,7 +10,8 @@ import CoreLocation
 
 class HomeViewController : UIViewController {
     
-    @IBOutlet weak var filterBtn: UIImageView!
+ 
+    @IBOutlet weak var findProducts: UIView!
     
     @IBOutlet weak var searchTF: UITextField!
     @IBOutlet weak var notificationView: UIView!
@@ -30,14 +31,14 @@ class HomeViewController : UIViewController {
         searchTF.delegate = self
         searchTF.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControl.Event.editingChanged)
         
-        filterBtn.isUserInteractionEnabled = true
-        filterBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(filterBtnClicked)))
+        findProducts.isUserInteractionEnabled = true
+        findProducts.layer.cornerRadius = 8
+        findProducts.dropShadow()
+        findProducts.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(filterBtnClicked)))
         
         tableView.delegate = self
         tableView.dataSource = self
-        
-        
-    
+
     }
     
     @objc func cellClicked(value : MyGesture){
@@ -56,7 +57,7 @@ class HomeViewController : UIViewController {
         }
     }
     
-    @objc func textFieldDidChange(textField : UITextField){
+    @objc func textFieldDidChange(textField : UITextField) {
         tempOrganiserModels.removeAll()
         
             if let query = textField.text, !query.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
@@ -77,6 +78,7 @@ class HomeViewController : UIViewController {
         tableView.reloadData()
         
     }
+    
     @objc func filterBtnClicked(){
 
 
@@ -133,7 +135,7 @@ class HomeViewController : UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         tempOrganiserModels.removeAll()
-        tempOrganiserModels = OrganiserModel.organisationModel
+        tempOrganiserModels = OrganiserModel.organisationModel.reversed()
         self.tableView.reloadData()
     }
     

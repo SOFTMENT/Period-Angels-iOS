@@ -38,6 +38,9 @@ class UserSelectionActivity : UIViewController {
         arrow1.dropShadow()
         arrow2.dropShadow()
         arrow3.dropShadow()
+        
+        
+     
     }
     
     @objc func userViewClicked(){
